@@ -2,9 +2,9 @@ package gmf
 
 /*
 
-#cgo pkg-config: libavcodec
+#cgo pkg-config: libavutil
 
-#include "libavcodec/dict.h"
+#include "libavutil/dict.h"
 
 */
 import "C"
