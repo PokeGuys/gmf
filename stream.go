@@ -173,3 +173,19 @@ func (s *Stream) CopyCodecPar(cp *CodecParameters) error {
 
 	return nil
 }
+
+func (s *Stream) GetMetaData() *AVDictionary {
+	cp := NewAVDictionary()
+	cp.avDictionary = s.avStream.metadata
+
+	return cp
+}
+
+func (s *Stream) SetMetaData(cp *AVDictionary) error {
+	if cp == nil || cp.avDictionary == nil {
+		return fmt.Errorf("dictionary is not initialized")
+	}
+
+	s.avStream.avDictionary = cp.avDictionary
+	return nil
+}
