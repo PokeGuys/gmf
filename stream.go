@@ -186,6 +186,6 @@ func (s *Stream) SetMetaData(cp *AVDictionary) error {
 		return fmt.Errorf("dictionary is not initialized")
 	}
 
-	s.avStream.avDictionary = cp.avDictionary
+	s.avStream.metadata = cp.avDictionary
 	return nil
 }
